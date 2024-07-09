@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Boxicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Include your CSS -->
+ 
+   
+    <link rel="stylesheet" href="static/style2.css">
+    <style>
+   /* Global Styles */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100vw; /* Use full viewport width */
+    height: 100vh; /* Use full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    margin-top: 200px;
+    text-align: center;
+    color:darkseagreen;
+    text-decoration: underline; /* Header text color */
+}
+
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #333; /* Footer text color */
+}
+
+/* Features Grid Styles */
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 20px;
+    width: 100%; /* Take full width of container */
+    padding: 20px;
+}
+
+.feature-item {
+    text-align: justify;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9; /* Background color for each feature item */
+}
+
+.feature-item i {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: darkgreen; /* Icon color */
+}
+
+.feature-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.feature-item h2 {
+    color: #333; /* Heading color */
+}
+
+.feature-item p {
+    color: #666; /* Text color */
+}
+
+/* Responsive Design */
+
+@media (max-width: 600px) {
+    .features-grid {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+    }
+}
+
+
+    </style>
+  
+</head>
+<body>
+    <!-- Sidebar -->
+    <section id="sidebar">
+        <a href="#" class="brand">
+            <i class='bx bxs-smile'></i>
+            <span class="text">Groundwater Genius</span>
+        </a>
+        <ul class="side-menu top">
+            <li >
+                <a href="home.html">
+                    <i class='bx bxs-home'></i>
+                    <span class="text">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="dashboard.html">
+                    <i class='bx bxs-dashboard'></i>
+                    <span class="text">Dashboard</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="about.html">
+                    <i class='bx bxs-info-circle'></i>
+                    <span class="text">About</span>
+                </a>
+            </li>
+            <li>
+                <a href="predictor2.html">
+                    <i class='bx bxs-droplet'></i>
+                    <span class="text">Predictor</span>
+                </a>
+            </li>
+            <li>
+                <a href="weather.html">
+                    <i class='bx bxs-sun'></i>
+                    <span class="text">Weather</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="side-menu">
+          
+            <li>
+                <a href="logout.html" class="logout">
+                    <i class='bx bxs-log-out-circle'></i>
+                    <span class="text">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <!-- End Sidebar -->
+
+    <!-- Main content -->
+    <section id="content">
+        <nav>
+			<i class='bx bx-menu' ></i>
+			
+			<!-- <form action="#">
+				
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			 -->
+		</nav>
+       
+    <main>
+        <div class="container">
+            <!-- Header section -->
+            <header>
+                <h1>About Our Groundwater Level Prediction Website</h1>
+            </header>
+            <!-- Features grid -->
+            <div class="features-grid">
+                <!-- First row -->
+                <div class="feature-item">
+                    <i class="fas fa-bullseye"></i>
+                    <img src="static/images/mission.jpg" alt="Mission Image">
+                    <h2>Mission</h2>
+                    <p>We're on a mission to revolutionize water resource management...</p>
+                    <p>Providing accurate predictions of groundwater levels.</p>
+                    <p>Our goal is to empower individuals and organizations with the insights they need to make informed
+                         decisions about water usage and conservation</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-cogs"></i>
+                    <img src="static/images/models.jpg" alt="Models Image">
+                    <h2>Advanced Prediction Models</h2>
+                    <p>Our website utilizes advanced machine learning models, including XGBoost, Random Forest, LSTM, and hybrid combinations, 
+                        to forecast groundwater 
+                        levels with precision.</p>
+                        <p> By analyzing historical data and real-time weather variables, our models deliver reliable predictions you can trust.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-sliders-h"></i>
+                    <img src="static/images/interactive.jpg" alt="Predictor Image">
+                    <h2>Interactive Predictor</h2>
+                    <p>Our interactive predictor allows users to input specific parameters like rainfall, humidity, and temperature to obtain 
+                        customized predictions of groundwater levels.</p>
+                        <p>Whether you're a researcher, water resource manager, or concerned citizen, our predictor puts valuable insights at your fingertips.
+                </div>
+                <!-- Second row -->
+                <div class="feature-item">
+                    <i class="fas fa-robot"></i>
+                    <img src="static/images/chatbot.jpg" alt="Chatbot Image">
+                    <h2>Intelligent Chatbot</h2>
+                    <p>Need assistance or have questions about groundwater prediction?</p>
+                        <p>Our intelligent chatbot is here to help! With instant responses and guided assistance, 
+                        our chatbot ensures a seamless user experience and provides valuable support every step of the way.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-sun"></i>
+                    <img src="static/images/weather.jpg" alt="Weather API Image">
+                    <h2>Weather API Integration</h2>
+                    <p>To enhance prediction accuracy, we've integrated a Weather API into our platform.</p>
+                    <p>This ensures that our models account for the latest environmental conditions when forecasting groundwater levels, 
+                    resulting in more reliable predictions.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-leaf"></i>
+                    <img src="static/images/sustainable.jpg" alt="Sustainability Image">
+                    <h2>Commitment to Sustainability</h2>
+                    <p>We're committed to sustainability and environmental conservation. </p>
+                        <p>By providing accurate groundwater predictions, we empower individuals and organizations to make sustainable
+                         water management decisions, ultimately contributing to a healthier planet for future generations.</p>
+                </div>
+            </div>
+            <!-- Footer section -->
+            <footer>
+                <p>Thank you for choosing [Website Name]. Together, let's create a brighter, more sustainable future.</p>
+            </footer>
+        </div>
+       
+
+        </main>
+    </section>
+    <script src="static/script.js"></script>
+    <!-- Include your JavaScript file -->
+    
+    
+</body>
+</html>

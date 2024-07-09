@@ -1,0 +1,114 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hello, thanks for visiting",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "dataset_info",
+      "patterns": [
+      "What is the dataset about?",
+      "Tell me about the dataset",
+      "Dataset information"
+      ],
+      "responses": [
+      "The dataset contains groundwater level data from the year 2022 to 2023.",
+      "It consists of approximately 1300 rows of groundwater level readings.",
+      "The dataset spans from 2022 to 2023 and includes around 1300 data points."
+      ]
+    },
+    {
+      "tag": "features",
+      "patterns": [
+      "What are the parameters or features?",
+      "Tell me about the features",
+      "Features of the dataset"
+      ],
+      "responses": [
+      "The dataset includes groundwater level, rainfall, humidity, and temperature.",
+      "Parameters in the dataset comprise groundwater level, rainfall, humidity, and temperature.",
+      "Features of the dataset consist of groundwater level, rainfall, humidity, and temperature."
+      ]
+     },
+     {
+      "tag": "model_details",
+      "patterns": [
+        "Tell me about the prediction models",
+        "How do the prediction models work?",
+        "Model details"
+      ],
+      "responses": [
+        "The prediction models include XGBoost, Random Forest, LSTM, and a hybrid of Random Forest and XGBoost.",
+        "Each model leverages different algorithms and techniques to forecast groundwater levels.",
+        "Ensembling multiple models helps in improving prediction accuracy and robustness."
+      ]
+    },
+    {
+      "tag": "visualization",
+      "patterns": [
+        "Can I visualize the groundwater level data?",
+        "Show me the groundwater level trends",
+        "Visualization of data"
+      ],
+      "responses": [
+        "Yes, you can visualize groundwater level trends using interactive charts and graphs.",
+        "We use Power BI for visualizing groundwater level data, allowing for in-depth analysis and exploration.",
+        "Visual representations help in identifying patterns and trends in groundwater level data."
+      ]
+    },
+     {
+      "tag": "usage",
+      "patterns": [
+        "How can I use the predictions?",
+        "What can I do with the predictions?",
+        "Usage of predictions"
+      ],
+      "responses": [
+        "Predictions can help in understanding future groundwater levels for planning and management.",
+        "You can utilize predictions to make informed decisions regarding water resource management.",
+        "Predictions offer insights into potential groundwater level fluctuations, aiding in decision-making processes."
+      ]
+    },
+    {
+      "tag": "funny",
+      "patterns": [
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Do you know any jokes?"
+      ],
+      "responses": [
+        "Why did the groundwater level bring a ladder to the party? Because it wanted to reach new heights!",
+        "What did one groundwater level say to the other? You crack me up, I'm all aquifer it!",
+        "Why don't groundwater levels like math? Because it's too much of a well-determined function!"
+      ]
+   
+    }
+  ]
+}

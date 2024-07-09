@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+        crossorigin="anonymous">
+    <!-- Include your CSS -->
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Include your CSS -->
+    <link rel="stylesheet" href="static/style2.css">
+    <style>
+        body {
+    background-color: #0fd3dd;
+    font-family: 'Poppins', sans-serif;
+}
+.form {
+    background-color: white;
+    width: 70vw;
+    margin: 50px auto;
+    padding: 20px 50px;
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
+    border-radius: 12px;
+}
+.form h1 {
+    color: #0fd3dd;
+}
+
+.button {
+    padding: 5px 30px;
+    font-size: 18px;
+}
+.result-section {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-style: italic;
+            color: #fff;
+        }
+        .low {
+            background-color: #f8d7da;
+            color: red;
+        }
+        .normal {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .high {
+            background-color: #fff3cd;
+            color: brown;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+   
+    <title>Groundwater Level Predictor</title>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <section id="sidebar">
+        <a href="#" class="brand">
+            <i class='bx bxs-smile'></i>
+            <span class="text">Groundwater Genius</span>
+        </a>
+        <ul class="side-menu top">
+            <li >
+                <a href="home.html">
+                    <i class='bx bxs-home'></i>
+                    <span class="text">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="dashboard.html">
+                    <i class='bx bxs-dashboard'></i>
+                    <span class="text">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="about.html">
+                    <i class='bx bxs-info-circle'></i>
+                    <span class="text">About</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="predictor2.html">
+                    <i class='bx bxs-droplet'></i>
+                    <span class="text">Predictor</span>
+                </a>
+            </li>
+            <li>
+                <a href="weather.html">
+                    <i class='bx bxs-sun'></i>
+                    <span class="text">Weather</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="side-menu">
+            
+            <li>
+                <a href="logout.html" class="logout">
+                    <i class='bx bxs-log-out-circle'></i>
+                    <span class="text">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <!-- End Sidebar -->
+
+    <!-- Main content -->
+    <section id="content">
+        <nav>
+			<i class='bx bx-menu' ></i>
+			
+			<!-- <form action="#">
+				
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			 -->
+		</nav>
+        <main>
+            <div class="head-title">
+                <div class="left">
+                    <h1>Groundwater Level Predictor</h1>
+                    <!-- You can add breadcrumb here if needed -->
+                </div>
+                <!-- You can add additional buttons or links here -->
+            </div>
+
+            <!-- Add your prediction form content here -->
+            <!-- <section id="prediction-form">
+                <form class="form" action="/predict" method="POST">
+                    <h1 class="my-3 text-center">Groundwater Level Predictor</h1>
+                    <div class="row">
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="date" class="date">DateTime</label>
+                                <input type="text" class="form-control" id="date" name="date" pattern="\d{2}-\d{2}-\d{4} \d{2}:\d{2}" placeholder="DD-MM-YYYY HH:MM" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="water_temperature" class="water_temperature">Temperature</label>
+                                <input type="text" class="form-control" id="water_temperature" name="water_temperature" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="relative_humidity" class="relative_humidity">Relative Humidity</label>
+                                <input type="text" class="form-control" id="relative_humidity" name="relative_humidity" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="rainfall" class="rainfall">Rainfall</label>
+                                <input type="text" class="form-control" id="rainfall" name="rainfall" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2 d-flex align-items-end justify-content-around">
+                            <button type="submit" class="btn btn-info button" style="margin-left: 100%;">Predict</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <!-- You can add additional content here, such as predicted result -->
+            <!-- <div> -->
+                <!-- {% if prediction %}
+                    <h1><center>Predicted Groundwater Level: {{ prediction }}</center></h1>
+                {% endif %} -->
+            <!-- </div>
+        </main> -->
+    <!-- </section> --> 
+    <section id="prediction-form">
+        <form class="form" action="/predict" method="POST">
+            <h1 class="my-3 text-center">Groundwater Level Predictor</h1>
+            <div class="row">
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="date" class="date">DateTime</label>
+                        <input type="text" class="form-control" id="date" name="date" placeholder="DD-MM-YYYY HH:MM" required>
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="water_temperature" class="water_temperature">Temperature (°C)</label>
+                        <input type="number" class="form-control" id="water_temperature" name="water_temperature" min="15" max="250" placeholder="15-250 °C" required>
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="relative_humidity" class="relative_humidity">Relative Humidity (%)</label>
+                        <input type="number" class="form-control" id="relative_humidity" name="relative_humidity" min="0" max="100" placeholder="0-100 %" required>
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="rainfall" class="rainfall">Rainfall (mm)</label>
+                        <input type="number" class="form-control" id="rainfall" name="rainfall" min="0" placeholder="Enter Rainfall in mm" required>
+                    </div>
+                </div>
+                <div class="col-md-6 my-2 d-flex align-items-end justify-content-around">
+                    <button type="submit" class="btn btn-info button" style="margin-left: 100%;">Predict</button>
+                </div>
+            </div>
+        </form>
+    </section>
+    {% if prediction %}
+            <div class="result-section {{ result_class }}">
+                <h1>Predicted Groundwater Level: {{ prediction }}</h1>
+                <h3>{{ message }}</h3>
+                <p>{{ advice }}</p>
+            </div>
+        {% elif error %}
+            <div class="result-section">
+                <h3>{{ error }}</h3>
+            </div>
+        {% endif %}
+    </div>
+    </main>
+    </section>
+    
+    <script>
+        // Function to format date to DD-MM-YYYY HH:MM
+        function formatDateToInput(date) {
+            const pad = (n) => n.toString().padStart(2, '0');
+            const day = pad(date.getDate());
+            const month = pad(date.getMonth() + 1);
+            const year = date.getFullYear();
+            const hours = pad(date.getHours());
+            const minutes = pad(date.getMinutes());
+            return `${day}-${month}-${year} ${hours}:${minutes}`;
+        }
+    
+        // Function to parse date from DD-MM-YYYY HH:MM to Date object
+        function parseDateFromInput(input) {
+            const [datePart, timePart] = input.split(' ');
+            const [day, month, year] = datePart.split('-').map(Number);
+            const [hours, minutes] = timePart.split(':').map(Number);
+            return new Date(year, month - 1, day, hours, minutes);
+        }
+    
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let dateInput = document.getElementById('date');
+            let now = new Date();
+            let oneYearFromNow = new Date();
+            oneYearFromNow.setFullYear(now.getFullYear() + 1);
+    
+            dateInput.setAttribute('min', formatDateToInput(now));
+            dateInput.setAttribute('max', formatDateToInput(oneYearFromNow));
+    
+            // Validate date input before form submission
+            document.querySelector('.form').addEventListener('submit', function(event) {
+                const dateValue = dateInput.value;
+                const selectedDate = parseDateFromInput(dateValue);
+                if (selectedDate < now || selectedDate > oneYearFromNow) {
+                    alert('Date must be between the current date and one year from now.');
+                    event.preventDefault();
+                }
+    
+                const temperature = parseFloat(document.getElementById('water_temperature').value);
+                const humidity = parseFloat(document.getElementById('relative_humidity').value);
+                const rainfall = parseFloat(document.getElementById('rainfall').value);
+    
+                if (temperature < 15 || temperature > 250) {
+                    alert('Temperature must be between 15°C and 250°C');
+                    event.preventDefault();
+                }
+    
+                if (humidity < 0 || humidity > 100) {
+                    alert('Relative Humidity must be between 0% and 100%');
+                    event.preventDefault();
+                }
+    
+                if (rainfall < 0) {
+                    alert('Rainfall must be a positive number');
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+    
+    <!-- Include your JavaScript file -->
+    <script src="static/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+
+</html>

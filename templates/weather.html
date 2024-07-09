@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Include your CSS -->
+ 
+   
+    <link rel="stylesheet" href="static/style2.css">
+    <style>
+        .weather-app{
+    min-height: 100vh;
+    background-image: url(./images/day/cloudy.avif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:#fff;
+    position: relative;
+transition: 500ms;
+opacity: 1;
+}
+.weather-app::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.3);
+z-index: 0;
+}
+.container{
+    position: absolute;
+    top: 0;
+    width: 100%;
+height: 100%;
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+flex-direction: column;
+padding: 2em 3em 4em 3em;
+}
+.container>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.city-time,
+.temp,
+.weather{
+    margin: 0 1em;
+}
+.city-time h1{
+    margin: 0;
+    margin-bottom: 0.2em;
+    font-size: 3em;
+}
+.temp{
+    font-size: 7em;
+    margin: 0;
+}
+.weather img{
+    display: block;
+    margin: 0.5em 0;
+}
+.panel{
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    top:0;
+    right: 0;
+    background: rgba(110, 110, 110, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.18);
+z-index: 1;
+padding: 3em 2em;
+overflow-y: scroll;
+}
+.panel form{
+    margin-bottom: 3em;
+}
+.submit{
+    position: absolute;
+    top:0;
+    right: 0;
+    padding: 1.5em;
+    margin: 0;
+    border: none;
+    outline: none;
+    background: #fa6d1b;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: 0.4s;
+}
+.submit:hover{
+    background: #fff !important;
+color: #000;
+}
+.search{
+    background: none;
+    border: none;
+    border-bottom: 1px #ccc solid;
+    width: 80%;
+    color: #fff;
+    font-size: 1.1em;
+}
+.search:focus{
+    outline: none;
+}
+.search::placeholder{
+    color: #ccc;
+}
+.panel ul{
+    padding: 0 0 1em 0;
+    margin: 2em 0;
+    border-bottom: 1px #ccc solid;
+}
+.panel ul li{
+color: #ccc;
+margin: 2.5em 0;
+}
+.panel ul h4{
+    margin: 3em 0;
+}
+.city{
+    display: block;
+    cursor: pointer;
+}
+.city:hover{
+    color: #fff;
+}
+.details li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media screen and (max-width:800px) {
+    .panel,.container{
+        position: relative;
+        width: 100% ;
+        top:initial;    
+    } }
+    @media screen and (max-height:500px) {
+        html{
+            font-size: 12px;
+        }
+}
+@media screen and (max-width:300px) {
+    .weather-app{
+        min-height: 40em;
+    }
+}
+    </style>
+  
+</head>
+<body>
+    <!-- Sidebar -->
+    <section id="sidebar">
+        <a href="#" class="brand">
+            <i class='bx bxs-smile'></i>
+            <span class="text">Groundwater Genius</span>
+        </a>
+        <ul class="side-menu top">
+            <li >
+                <a href="home.html">
+                    <i class='bx bxs-home'></i>
+                    <span class="text">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="dashboard.html">
+                    <i class='bx bxs-dashboard'></i>
+                    <span class="text">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="about.html">
+                    <i class='bx bxs-info-circle'></i>
+                    <span class="text">About</span>
+                </a>
+            </li>
+            <li>
+                <a href="predictor2.html">
+                    <i class='bx bxs-droplet'></i>
+                    <span class="text">Predictor</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="weather.html">
+                    <i class='bx bxs-sun'></i>
+                    <span class="text">Weather</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="side-menu">
+           
+            <li>
+                <a href="logout.html" class="logout">
+                    <i class='bx bxs-log-out-circle'></i>
+                    <span class="text">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <!-- End Sidebar -->
+
+    <!-- Main content -->
+    <section id="content">
+        <nav>
+			<i class='bx bx-menu' ></i>
+			
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			 
+			
+			
+		</nav>
+    <main>
+        <div class="weather-app">
+            <div class="container">
+            <h3 class="brand">Weather</h3>
+            <div>
+                <h1 class="temp">33&#176</h1>
+                <div class="city-time">
+                    <h1 class="name">Panaji</h1>
+                    <small>
+                        <span class="time">10:18</span>
+                        <span class="date">23 April 24</span>
+                    </small>
+                    </div>
+                    <div class="weather">
+            <img src="static/icons/day/113.png" class="icon" alt="icon" width="50" height="50"/>
+            <span class="condition">Cloudy</span>
+                    </div>
+                    </div>
+            </div>
+            <div class="panel">
+                <form class="locationInput">
+                    <input type="text" class="search" placeholder="search Location"/>
+                    <button type="submit" class="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+                <ul class="cities">
+                    <li class="city">Ponda</li>
+                    <li class="city">Margao</li>
+                    <li class="city">Pernem</li>
+                    <li class="city">Mumbai</li>
+                </ul>
+                <ul class="details">
+                    <h4>Weather Details</h4>
+                    <li>
+                        <span>Cloudy</span>
+                        <span class="cloud">90%</span>
+                    </li>
+                    <li>
+                        <span>Humidity</span>
+                        <span class="humidity">55%</span>
+                    </li>
+                    <li>
+                        <span>Wind</span>
+                        <span class="wind">6km/h</span>
+                    </li>
+                </ul>
+            </div>
+            </div>
+       
+       
+
+        </main>
+    </section>
+
+    <!-- Include your JavaScript file -->
+    
+    
+    <script src="static/script.js"></script>
+</body>
+</html>

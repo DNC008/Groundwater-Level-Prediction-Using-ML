@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Include your CSS -->
+ 
+   
+    <link rel="stylesheet" href="static/style2.css">
+  
+</head>
+<body>
+    <!-- Sidebar -->
+    <section id="sidebar">
+        <a href="#" class="brand">
+            <i class='bx bxs-smile'></i>
+            <span class="text">Groundwater Genius</span>
+        </a>
+        <ul class="side-menu top">
+            <li class="active">
+                <a href="#">
+                    <i class='bx bxs-home'></i>
+                    <span class="text">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="dashboard.html">
+                    <i class='bx bxs-dashboard'></i>
+                    <span class="text">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="about.html">
+                    <i class='bx bxs-info-circle'></i>
+                    <span class="text">About</span>
+                </a>
+            </li>
+            <li>
+                <a href="predictor2.html">
+                    <i class='bx bxs-droplet'></i>
+                    <span class="text">Predictor</span>
+                </a>
+            </li>
+            <li>
+                <a href="weather.html">
+                    <i class='bx bxs-sun'></i>
+                    <span class="text">Weather</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="side-menu">
+           
+            <li>
+                <a href="logout.html" class="logout">
+                    <i class='bx bxs-log-out-circle'></i>
+                    <span class="text">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <!-- End Sidebar -->
+
+    <!-- Main content -->
+    <section id="content">
+        <nav>
+			<i class='bx bx-menu' ></i>
+			
+			<!-- <form action="#">
+				
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label> -->
+			
+		</nav>
+    <main>
+        <div class="container">
+            <div class="chatbox">
+                <div class="chatbox__support">
+                    <div class="chatbox__header">
+                        <div class="chatbox__image--header">
+                            <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image">
+                        </div>
+                        <div class="chatbox__content--header">
+                            <h4 class="chatbox__heading--header">Chat support</h4>
+                            <p class="chatbox__description--header">Hi. My name is AquaAdvisor . How can I help you?</p>
+                        </div>
+                    </div>
+                    <div class="chatbox__messages">
+                        <div></div>
+                    </div>
+                    <div class="chatbox__footer">
+                        <input type="text" placeholder="Write a message...">
+                        <button class="chatbox__send--footer send__button">Send</button>
+                    </div>
+                </div>
+                <div class="chatbox__button">
+                    <button><img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /></button>
+                </div>
+            </div>
+              <!-- News section -->
+         <div id="news" class="news">
+            <!-- News articles will be dynamically added here -->
+        </div>
+        </div>
+       
+       
+
+        </main>
+    </section>
+    <!-- Include your JavaScript file -->
+    
+    <script>
+        $SCRIPT_ROOT = {{ request.script_root|tojson }};
+    </script>
+     <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+    <script src="static/script.js"></script>
+
+
+    <script>
+        fetchNewsData();
+
+        async function fetchNewsData() {
+            const apiKey = '231a5573828e4d819681fc6dfe4e42f9';
+        const apiUrl = 'https://newsapi.org/v2/everything?' +
+                       'q=water%20report%20India&' + // Search for water report news in India
+                       'apiKey=' + apiKey;
+
+
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                // Display news articles
+                displayNewsArticles(data.articles);
+            } catch (error) {
+                console.error('Error fetching news data:', error);
+            }
+        }
+
+        function displayNewsArticles(articles) {
+            const newsContainer = document.getElementById('news');
+
+            if (!newsContainer) {
+                console.error('News container not found.');
+                return;
+            }
+
+            articles.forEach(article => {
+        const newsItem = document.createElement('div');
+        newsItem.classList.add('news-item');
+
+        const imageUrl = article.urlToImage ? article.urlToImage : 'placeholder-image.jpg';
+
+        newsItem.innerHTML = `
+            <img src="${imageUrl}" alt="${article.title}" class="news-image">
+            <div class="news-content">
+                <h3>${article.title}</h3>
+                <p>${article.description}</p>
+                <a href="${article.url}" target="_blank">Read more</a>
+            </div>
+        `;
+        newsContainer.appendChild(newsItem);
+    });
+        }
+    </script>
+    
+</body>
+</html>
